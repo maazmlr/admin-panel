@@ -5,12 +5,20 @@ import './App.css'
 import Login from './components/Login'
 import Header from './components/Header'
 import SidebarButtons from './components/SidebarButtons'
+import { Route } from 'react-router-dom'
+import Sider from 'antd/es/layout/Sider'
 
 function App() {
+  const router=createBrowserRouter(createRoutesFromElements(
+    <Route element={<Login/>}>
+      <Route path='/' element={<Side/>}/>
+
+    </Route>
+
+  ))
   return(
     
-    <SidebarButtons text={"maaz"}/>
-
+      <Login/>
     )
   
 }
