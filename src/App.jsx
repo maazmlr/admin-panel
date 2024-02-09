@@ -5,20 +5,20 @@ import './App.css'
 import Login from './components/Login'
 import Header from './components/Header'
 import SidebarButtons from './components/SidebarButtons'
-import { Route } from 'react-router-dom'
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Sider from 'antd/es/layout/Sider'
 
 function App() {
   const router=createBrowserRouter(createRoutesFromElements(
     <Route element={<Login/>}>
-      <Route path='/' element={<Side/>}/>
+      <Route path='/' element={<Sider/>}/>
 
     </Route>
 
   ))
   return(
     
-      <Login/>
+    <RouterProvider router={router}/>
     )
   
 }
