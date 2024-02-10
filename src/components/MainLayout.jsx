@@ -8,7 +8,7 @@ const MainLayout = () => {
     <div className=' '>
       
         <Header/>
-        <div className='flex   h-screen '>
+        <div className='flex relative '>
         <Sider/>
         <Outlet/>
         </div>

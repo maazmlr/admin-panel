@@ -4,7 +4,7 @@ import logo from "../assets/logo.png"
 
 const Header = () => {
   return (
-    <div  className='bg-[#0E151B] h-16 flex place-content-between items-center px-5'>
+    <div  className='bg-[#0E151B] h-16 flex place-content-between items-center px-5 w-1/1'>
         <img src={logo} alt="" className='h-8'/>
         <div className="sub-cont flex ">
         <div className="search h-12 bg-[#121A21] flex items-center rounded-2xl place-content-evenly	w-[27rem]">
