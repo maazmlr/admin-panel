@@ -6,18 +6,20 @@ import Login from './components/Login'
 import Header from './components/Header'
 import SidebarButtons from './components/SidebarButtons'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import Sider from 'antd/es/layout/Sider'
+import Sider from './components/Sider'
+import MainLayout from './components/MainLayout'
+import Home from './components/Home/Home'
 
 function App() {
+
   const router=createBrowserRouter(createRoutesFromElements(
-    <Route element={<Login/>}>
-      <Route path='/' element={<Sider/>}/>
+    <Route element={<MainLayout/>}>
+      <Route path='/' element={<Home/>}/>
 
     </Route>
 
   ))
   return(
-    
     <RouterProvider router={router}/>
     )
   

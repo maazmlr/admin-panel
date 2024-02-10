@@ -1,11 +1,11 @@
 import React from 'react'
-import logo from "../assets/logo.jpg"
 
-const SidebarButtons = ({text}) => {
+const SidebarButtons = ({text,logo}) => {
   return (
-    <div className='bg-purple-500'>
-        <img src={logo} alt="" />
-        <p>
+    <div className=' w-[18rem] p-4 flex h-14 items-center place-content-between'>
+     
+        <p className='flex  items-center font-bold place-content-evenly text-2xl text-white'>
+        {logo} 
             {text}
         </p>
         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
