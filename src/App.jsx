@@ -13,9 +13,12 @@ import Home from './components/Home/Home'
 function App() {
 
   const router=createBrowserRouter(createRoutesFromElements(
+    <Route>
+      <Route path='/login' element={<Login/>}/>
     <Route element={<MainLayout/>}>
       <Route path='/' element={<Home/>}/>
 
+    </Route>
     </Route>
 
   ))
