@@ -43,8 +43,12 @@ textarea:focus, input:focus{
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   body {
-    font-size: 18px;
+    font-size: 10px;
   }
+}
+
+.white{
+  color: aliceblue;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -59,4 +63,11 @@ textarea:focus, input:focus{
   body {
     font-size: 22px;
   }
+}
+
+.filter:hover{
+  cursor: pointer;
+  background-color: #f3f3f3;
+  border-radius: 0.3rem;
+  
 }
