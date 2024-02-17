@@ -1,8 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const SidebarButtons = ({text,logo}) => {
+const SidebarButtons = ({text,logo,link}) => {
   return (
-    <div className=' w-[18rem] p-2 flex h-13 items-center  place-content-between'>
+
+    <NavLink to={link}>
+    <div className=' w-[18rem] p-3   flex h-13 items-center  place-content-between'>
      
         <p className='flex  items-center font-bold place-content-evenly text-lg text-white'>
         {logo} 
@@ -13,6 +16,7 @@ const SidebarButtons = ({text,logo}) => {
 </svg>
 
     </div>
+    </NavLink>
   )
 }
 

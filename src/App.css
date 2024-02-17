@@ -2,6 +2,10 @@
   font-size: 16px;
   margin: 0;
 }
+body{
+  height: 100vh;
+  width: 100%;
+}
 
 
 /*-------------- Login form--------- */
@@ -70,4 +74,36 @@ textarea:focus, input:focus{
   background-color: #f3f3f3;
   border-radius: 0.3rem;
   
+}
+.sidebar{
+  height: 100%;
+  min-width: 18rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0E151B
+  ;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.main{
+  max-width: 100%;
+  width: 100vw;
+  margin-left: 18rem;
+  height: 100%;
+  background: #0B0E12;
+  padding: 2rem 0;
+}
+.card-btn{
+  text-align: center !important;
+  padding: 0.8rem !important;
+  width: 50% !important;
+  padding-left: 4rem;
+  
+}
+.blue{
+  background: #335DD2 !important;
+}
+.grey{
+  background: #121A21 !important;
 }

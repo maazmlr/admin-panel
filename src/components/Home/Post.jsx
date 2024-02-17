@@ -1,11 +1,12 @@
 import { MoreOutlined } from "@ant-design/icons";
 import React from "react";
+import EditDelete from "./EditDelete";
 
-const Post = () => {
+const Post = ({boost,ads}) => {
   return (
-    <div className=" mb-4">
+    <div className=" mb-4 bg-[#0E151B]">
 
-      <div className="info bg-[#0E151B] h-16 flex items-center px-4">
+      <div className="info  h-16 flex items-center px-4">
 
         <div className="container flex items-center p-2">
           <img
@@ -18,20 +19,34 @@ const Post = () => {
             <p className="white text-xs">@garylamb. 2 hours ago</p>
           </div>
         </div>
-        <MoreOutlined style={{color:"white"}} className="font-bold"  />
-
+        <EditDelete/>
       </div>
       <div className="post bg-purple-600 h-[22rem]">
       </div>
-      <div className="post-detail  p-5 bg-black white flex justify-between">
+      <div className="post-detail  p-5  white flex justify-between">
         <div className="flex">
             <p className="mr-4">100 Likes</p>
             <p>218 comments</p>
         </div>
         <p>100 shares</p>
       </div>
+      {
+        boost ?(
+      <div className="button p-3 ">
+        {
+          ads ?
 
+        <button className="blue w-[50%] p-2 rounded-xl ">Approve</button>
+        : 
+        <button className="blue w-[50%] p-2 rounded-xl ">Boost</button>
+}
+        <button className="grey w-[50%] p-2 rounded-xl">Delete</button>
+      </div>
+        )
+        : null
+}
     </div>
+      
   );
 };
 
