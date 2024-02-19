@@ -15,6 +15,7 @@ import BlueHome from './components/BlueTick/BlueHome'
 import Boost from './components/Boost/Boost'
 import Ads from './components/ads/Ads'
 import SiderProfile from './components/SiderProfile'
+import UserProfile from './components/UserProfile/UserProfile'
 
 function App() {
 
@@ -33,7 +34,8 @@ function App() {
 
   ))
   return(
-    <RouterProvider router={router}/>
+    <UserProfile/>
+    // <RouterProvider router={router}/>
     )
   
 }

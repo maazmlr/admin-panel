@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import filter from "../../assets/filter.png"
 import Post from "./Post";
 import Date from "./Date";
+import SiderProfile from "../SiderProfile";
+import UsersList from "../UsersList";
 
 const Home = () => {
 
@@ -25,7 +27,9 @@ const Home = () => {
           
 
         </div>
-        <div className="users bg-slate-300 h-7 w-[18rem]"></div>
+        <div className="users w-[18rem]">
+        <UsersList/>
+        </div>
       </div>
     </div>
   );
