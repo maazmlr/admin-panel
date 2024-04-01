@@ -1,8 +1,8 @@
 import React from 'react';
 
 const SiderProfile = () => (
-  
-    <div className=" flex w-[17rem] justify-between bg-[#131A23] h-16 rounded-lg px-2">
+    <div className="dropdown dropdown-top">
+    <div role='button' tabIndex={0}  className=" flex w-[17rem] justify-between bg-[#131A23] h-16 rounded-lg px-2">
         <div className="right w-[20%] mt-2">
             <img src="https://s3-alpha-sig.figma.com/img/14bf/2706/c31209d5ad5324dd7e5f3ab55fe4d6ac?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JwPNXdutbSseKnzEkSgUjKxL9tkBhDwVoa97DClx5xr0ptEz8B3FcuMXpfR0ySkMI2JEAmISjNa5vjGYqR4jlOCs~4VfGobHRkwS5yKsJsoDhq3lFsKDoLpJn-BWHZhLt9NL41oAkMfsJkVqoYtYkwReRcdA-HxOCC7Si0GuuG7P9LmmAykr9g7wtTpPrfgZr4V3zS3byESO3~Wa5-T63nGjiPmr68GEvhEApdd9F9SNrvsrFUMVqQt64J6bby9ndpXI244KdcAiMX9LSfw8-1pfa312KArwwCJy5LHT8EuezfToNEMjwz1NCdORxLbLcH2G5dyheNYi7d1rlW24xA__" alt="" className='rounded-full h-12 w-12'/>
         </div>
@@ -17,7 +17,11 @@ const SiderProfile = () => (
 
 
         </div>
+        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 ml-6 mb-1 shadow bg-base-100 rounded-box w-64">
+    <li><a>Profile</a></li>
+    <li><a>logout</a></li>
+  </ul>
     </div>
-  
+    </div>
 );
 export default SiderProfile;

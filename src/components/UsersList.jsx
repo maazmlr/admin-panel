@@ -14,7 +14,7 @@ const UsersList = () => {
     <div>
         <SiderProfile/>
         <div className="list">
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <List sx={{ width: '96%', maxWidth: "19rem", bgcolor: 'background.paper' }}>
       <ListItem>
         <ListItemAvatar>
           <Avatar>
