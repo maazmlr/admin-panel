@@ -27,6 +27,7 @@ textarea:focus, input:focus{
   color: antiquewhite;
 }
 
+
 @media only screen and (max-width: 600px) {
   *{
     font-size: 5px;
@@ -40,7 +41,7 @@ textarea:focus, input:focus{
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   body {
-    font-size: 16px;
+    font-size: 8px;
   }
 }
 
@@ -106,4 +107,8 @@ textarea:focus, input:focus{
 }
 .grey{
   background: #121A21 !important;
+}
+
+link :active{
+  background: #000;
 }

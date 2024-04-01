@@ -21,8 +21,8 @@ export default function EditPost() {
 
 
   return (
-    <Card sx={{  }}>
-      <CardHeader
+    <Card sx={{ height:"28rem", background:"#0B0E12", color:"white"}}>
+      <CardHeader sx={{color:"white"}}
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             R
@@ -30,13 +30,14 @@ export default function EditPost() {
         }
         action={
           <IconButton aria-label="settings">
-            <CloseOutlinedIcon />
+            <CloseOutlinedIcon className='text-white' />
           </IconButton>
         }
         title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        subheader={<h2 className='text-white'>hello</h2>}
       />
       <CardMedia
+        className='rounded-xl'
         component="img"
         sx={{height:"20rem"}}
 
@@ -50,8 +51,8 @@ export default function EditPost() {
           if you like.
         </Typography>
       </CardContent> */}
-      <CardActions disableSpacing>
-        <button>Save Changes</button>
+      <CardActions sx={{background:"#335DD2"}} className='rounded-xl mt-2' disableSpacing>
+        <button className='text-center w-full'>Save Changes</button>
         </CardActions>
         
     </Card>

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
@@ -21,8 +20,8 @@ const Date = () => {
         date.push(i);
     }
 
-    const yearOptions=year?.map((v,k)=><option value={v} key={k}>{v}</option>) 
-    const monthOption=month?.map((v,k)=><option value={v} key={k}>{v}</option>)   
+    const yearOptions=year?.map((v,k)=><MenuItem value={v} key={k}>{v}</MenuItem>) 
+    const monthOption=month?.map((v,k)=><MenuItem value={v} key={k}>{v}</MenuItem>)   
     const dateOption=date?.map((v,k)=><MenuItem value={v} key={k}>{v}</MenuItem>)   
     const [inpDate, setInpDate] = React.useState('');
     const [inpMonth, setInpMonth] = React.useState('');
@@ -42,9 +41,10 @@ const Date = () => {
       <div>
        
         
-        <FormControl sx={{ m: "0.4rem", minWidth: "7rem" ,height:"3.4rem" }} className='bg-slate-50'>
-          <InputLabel id="demo-simple-select-readonly-label" >Date</InputLabel>
+        <FormControl sx={{ m: "0.4rem", minWidth: "8rem" ,height:"3.4rem" }} className='bg-slate-50'>
+          <InputLabel className='' id="demo-simple-select-readonly-label" >Date</InputLabel>
           <Select
+            
             
             labelId="demo-simple-select-readonly-label"
             id="demo-simple-select-readonly"
@@ -60,7 +60,7 @@ const Date = () => {
            {dateOption}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: "0.4rem", minWidth: "7rem" ,height:"3.4rem"}} className='bg-white'>
+        <FormControl sx={{ m: "0.4rem", minWidth: "8rem" ,height:"3.4rem"}} className='bg-white'>
           <InputLabel id="demo-simple-select-readonly-label">Month</InputLabel>
           <Select
             labelId="demo-simple-select-readonly-label"
@@ -76,7 +76,7 @@ const Date = () => {
            {monthOption}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: "0.4rem", minWidth: "7rem ",height:"3.4rem"}} className='bg-white'>
+        <FormControl sx={{ m: "0.4rem", minWidth: "8rem ",height:"3.4rem"}} className='bg-white'>
           <InputLabel id="demo-simple-select-readonly-label">Year</InputLabel>
           <Select
             labelId="demo-simple-select-readonly-label"

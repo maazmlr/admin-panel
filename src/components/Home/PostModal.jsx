@@ -12,10 +12,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-    width:"35rem",
-  bgcolor: 'background.paper',
+    width:"30rem",
+  bgcolor: '#0B0E12',
   boxShadow: 104,
-  p:"1rem",
+  p:"0.5rem",
 };
 
 export default function PostModal() {
