@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { CameraOutlined } from '@ant-design/icons'
 import Links from './Links'
+import Modal from './modal'
 
 const Profile = () => {
 
@@ -42,13 +43,13 @@ const Profile = () => {
           <div className="name mt-4">
             <h2 className='font-bold text-3xl'>Slyfer2428</h2>
             <h2 className='text-xl'>@slyfer</h2>
-            <p className='mt-4'>points</p>
+            <Modal/>
             <p>Senior blockchain developer @Brand</p>
             <p>328 following &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;           200 follwers</p>
           </div>
 
           <hr className='mt-12'/>
-          <Links/>
+          {/* <Links/> */}
 
           </div>
 

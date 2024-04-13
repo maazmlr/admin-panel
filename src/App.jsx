@@ -15,6 +15,8 @@ function App() {
   const router=createBrowserRouter(createRoutesFromElements(
     <Route>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/user-profile' element={<UserProfile/>}/>
+
     <Route element={<MainLayout/>}>
       <Route path='/' element={<Home/>}/>
       <Route path='/users' element={<Users/>}/>

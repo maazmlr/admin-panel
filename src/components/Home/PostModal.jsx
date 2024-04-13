@@ -18,14 +18,15 @@ const style = {
   p:"0.5rem",
 };
 
-export default function PostModal() {
+export default function PostModal({proImg,userName,userEmail,text,pic,video}) {
+  console.log(pic)
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <div className='flex items-center justify-center'>
-      <Button onClick={handleOpen}>Edit</Button>
+    <div className='flex  '>
+      <p onClick={handleOpen}>Edit</p>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -41,7 +42,7 @@ export default function PostModal() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <EditPost/>
+            <EditPost proImg={proImg} pic={pic} text={text} video={video} username={userName} email={userEmail}  />
           </Box>
         </Fade>
       </Modal>
