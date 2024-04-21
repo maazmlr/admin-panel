@@ -1,27 +1,11 @@
-import bgImg from '../../assets/bg.png'
-import p from '../../assets/profile.png'
+import bgImg from '../assets/bg.png'
+import p from '../assets/profile.png'
 import PinDropOutlinedIcon from '@mui/icons-material/PinDropOutlined';
 import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import { useEffect, useState } from 'react';
-import axios from "axios";
-import Cookies from 'js-cookie';
-import url from '../../url';
-import Header from '../Header';
 
 export default function FirstSec({ emailVal }) {
-    const [data,setData]=useState("")
-    const token=Cookies.get("token");
-
-    useEffect(()=>{
-        axios.get(`${url}getAdminInfo`,{
-            headers:{
-                token,
-            }
-
-        }).then(res=>setData(res.data.message))
-    },[])
-    console.log(data);
     const [media, setMedia] = useState();
     const [bg, setBg] = useState();
     const handleFileChange = (e) => {
@@ -55,11 +39,9 @@ export default function FirstSec({ emailVal }) {
         }
     };
     return (
-        <div className=''>
-                    <Header/>
-
-            <div className=''>
-                <img className='post-bg-img' src={data.coverImage} alt="p" />
+        <div>
+            <div>
+                <img className='post-bg-img' src={bgImg} alt="p" />
                 <label className="camera-icon1">
                     <CameraAltOutlinedIcon style={{ color: "#FAFAFA", fontSize: 24 }} />
                     <input onChange={handleFileChange1} accept="image/x-png, image/gif, image/jpeg" style={{ display: "none" }} type="file" />
@@ -68,7 +50,7 @@ export default function FirstSec({ emailVal }) {
 
             <div>
                 <div>
-                    <img className='post-profile-img1' src={data.proImage} alt="profile" />
+                    <img className='post-profile-img1' src={p} alt="profile" />
                     <label className="camera-icon">
                         <CameraAltOutlinedIcon style={{ color: "#FAFAFA", fontSize: 24 }} />
                         <input onChange={handleFileChange} accept="image/x-png, image/gif, image/jpeg" style={{ display: "none" }} type="file" />
@@ -78,10 +60,10 @@ export default function FirstSec({ emailVal }) {
                 <button className='edit-btn' style={{position: "absolute", right: "0", marginRight: "250px", marginTop: "8px"}}><CreateOutlinedIcon fontSize='14' style={{marginRight: "5px"}}/>Edit profile</button>
             </div>
             <div className='post-intro'>
-                <p className='post-intro-name'>{data.username}</p>
-                <p style={{ fontSize: "20px" }} className='post-time'>@{data.username}</p>
+                <p className='post-intro-name'>Fahim Abbasi</p>
+                <p style={{ fontSize: "20px" }} className='post-time'>@fahimabbasi</p>
                 <div style={{ padding: "2rem 0 1rem 0" }}>
-                    <p style={{ fontSize: "20px" }} className='post-time'>{data.bio}<span style={{ color: "#335DD2" }}>@dotexe</span></p>
+                    <p style={{ fontSize: "20px" }} className='post-time'>Product Designer<span style={{ color: "#335DD2" }}>@dotexe</span></p>
                     <p style={{ fontSize: "16px", marginTop: "4px" }} className='post-time'><PinDropOutlinedIcon fontSize='12' />London, UK</p>
                 </div>
                 <hr style={{ color: "#324151", margin: "0rem 0rem 1rem 0" }} />

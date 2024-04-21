@@ -7,6 +7,7 @@ import axios from 'axios'
 import url from '../../url'
 import Cookies from "js-cookie"
 import noProfile from "../../assets/profile.png"
+import { NavLink } from 'react-router-dom'
 
 
 const Users = () => {
@@ -24,10 +25,11 @@ const Users = () => {
     
   },[])
   
+
   
   const [change,setChange]=useState(false);
-  console.log(change);
-  const elements=users.map(user=><UserCard username={user.username} proImg={user?.proImage} email={user.email}/>)
+  console.log(users);
+  const elements=users.map(user=><NavLink to={`/user-profile/${user.email}`}><UserCard username={user.username} proImg={user?.proImage} email={user.email}/></NavLink>)
   return (
     <div className="main-section main  p-10" >
       <div className='flex justify-between mx-16'>

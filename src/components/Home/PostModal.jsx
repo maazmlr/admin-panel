@@ -18,8 +18,8 @@ const style = {
   p:"0.5rem",
 };
 
-export default function PostModal({proImg,userName,userEmail,text,pic,video}) {
-  console.log(pic)
+export default function PostModal({proImg,userName,userEmail,text,pic,video,postId}) {
+  console.log(postId)
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -42,7 +42,7 @@ export default function PostModal({proImg,userName,userEmail,text,pic,video}) {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <EditPost proImg={proImg} pic={pic} text={text} video={video} username={userName} email={userEmail}  />
+            <EditPost postId={postId} proImg={proImg} pic={pic} text={text} video={video} username={userName} email={userEmail}  />
           </Box>
         </Fade>
       </Modal>

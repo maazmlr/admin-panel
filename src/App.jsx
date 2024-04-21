@@ -8,6 +8,7 @@ import BlueHome from './components/BlueTick/BlueHome'
 import Boost from './components/Boost/Boost'
 import Ads from './components/ads/Ads'
 import UserProfile from './components/UserProfile/UserProfile'
+import FirstSec from './components/AdminProfile/AdminProfile'
 
 
 function App() {
@@ -15,7 +16,11 @@ function App() {
   const router=createBrowserRouter(createRoutesFromElements(
     <Route>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/user-profile' element={<UserProfile/>}/>
+      <Route path='/user-profile/:id' element={<UserProfile/>}/>
+      <Route path='/adminpro' element={<div className='profile'>
+      <FirstSec/>
+    </div>}/>
+
 
     <Route element={<MainLayout/>}>
       <Route path='/' element={<Home/>}/>
@@ -31,6 +36,9 @@ function App() {
   return(
     // <UserProfile/>
     <RouterProvider router={router}/>
+    // <div className='profile'>
+    //   <FirstSec/>
+    // </div>
     )
   
 }

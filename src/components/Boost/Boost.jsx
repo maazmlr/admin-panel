@@ -28,7 +28,7 @@ const Boost = () => {
           token
         }
       }).then(res=>console.log(res))
-    
+    setShow(true)
     }
     catch(err){
       console.log(err)
@@ -37,6 +37,7 @@ const Boost = () => {
     }
 
     const approveBoost=async(post_Id,uid,token)=>{
+      console.log(post_Id);
       try {
         const res=await axios.put(`${url}approveBoostPostReq/`,{
           userId:uid,
@@ -46,25 +47,26 @@ const Boost = () => {
             token
           }
         })
+        setShow(true)
       } catch (error) {
         
         console.log(error);
       }
     }
     
-    const elements=posts.map((post,i)=><Post key={i} pic={post.post.pic} video={post.post.video}  boost={true} proImg={post.proImage} userEmail={post.email} userName={post.username} Comments={post.post.comments} likes={post.post.likes} share={post.post.share} time={post.post.time}  deleteBoost={delBoostPost} postId={post.post.id} approveBoost={approveBoost} uid={post.userId}/>)
+    const elements=posts.map((post,i)=><Post key={i} pic={post.post.pic} video={post.post.video}  boost={true} proImg={post.proImage} userEmail={post.email} userName={post.username} Comments={post.post.comments} likes={post.post.likes} share={post.post.share} time={post.post.time}  deleteBoost={delBoostPost} postId={post.post.post_Id} approveBoost={approveBoost} uid={post.boostPostId} apUid={post.userId}/>)
   
     return (
 
-    <div className={`main pl-24 ${show && "hidden"} min-h-[100vh]`}>
-        <div className="info flex justify-between items-center w-[35rem] mb-3">
+    <div className={`main pl-24  min-h-[100vh]`}>
+        <div className="info flex justify-between items-center w-[560px] mb-3">
         {change ? <Date/> :
             <>
             <p className="white text-2xl font-bold ">Boost </p>
             <img src={filter} alt="" className=" filter h-6 w-6" onClick={()=>setChange(true)} />
             </> }        
             </div>
-        <div className="boost-post w-[35rem]">
+        <div className={`boost-post w-[560px] `}>
           {elements}
         </div>
     </div>

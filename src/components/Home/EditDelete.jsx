@@ -5,6 +5,7 @@ import cookies from "js-cookie"
 
 const EditDelete = ({proImg,username,email,postId,postUserId,handleState,text,pic,video}) => {
   const token=cookies.get("token")
+  console.log(postId);
   const handleDelete=(token)=>{
     console.log("dele")
     handleState(token)
@@ -12,7 +13,7 @@ const EditDelete = ({proImg,username,email,postId,postUserId,handleState,text,pi
   const Modal =()=>{
 
     return(
-      <PostModal proImg={proImg} userEmail={email} text={text} pic={pic} video={video} userName={username}/>
+      <PostModal postId={postId} proImg={proImg} userEmail={email} text={text} pic={pic} video={video} userName={username}/>
     )
   }
   return (

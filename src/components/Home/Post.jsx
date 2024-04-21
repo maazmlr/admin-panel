@@ -6,9 +6,9 @@ import url from "../../url.js";
 import Cookies from "js-cookie"
 import noProfile from "../../assets/profile.png"
 
-const Post = ({ adsAppFunc,deleteAdsPost ,boost,ads,proImg,userName,userEmail,likes,share,Comments,time,postId,postUserId,deleteBoost,text,pic,video,approveBoost},uid) => {
-  const token=Cookies.get("token")
-  console.log(token);
+const Post = ({id, adsAppFunc,deleteAdsPost,apUid ,boost,ads,proImg,userName,userEmail,likes,share,Comments,time,postId,postUserId,deleteBoost,text,pic,video,approveBoost,uid}) => {
+  const token=Cookies.get("token");
+  console.log("uiddokd",uid);
   const payload={
     postUserId,
     post_Id:postId
@@ -17,8 +17,6 @@ const Post = ({ adsAppFunc,deleteAdsPost ,boost,ads,proImg,userName,userEmail,li
 
   const [deleted,setDelete]=useState(false);
    async function handleState(tokem){
-    console.log(postId,postUserId)
-    console.log("token in post",tokem);
       const del=await axios.delete(`${url}adminDeletePost`, {
         data: {
             post_Id:postId,
@@ -32,7 +30,7 @@ const Post = ({ adsAppFunc,deleteAdsPost ,boost,ads,proImg,userName,userEmail,li
       
     setDelete(true)
   }
-  
+  console.log("post id is ",postId);
 
   return (
     <div className={` mb-4 bg-[#0E151B] ${deleted ? "hidden" : ""}`} >
@@ -51,7 +49,7 @@ const Post = ({ adsAppFunc,deleteAdsPost ,boost,ads,proImg,userName,userEmail,li
             <p className="white text-xs">{time} </p>
           </div>
         </div>
-        {(!boost && !ads)&&         <EditDelete  proImg={proImg} text={text} video={video} pic={pic} email={userEmail} username={userName} handleState={handleState} />} 
+        {(!boost && !ads)&&         <EditDelete postId={postId} proImg={proImg} text={text} video={video} pic={pic} email={userEmail} username={userName} handleState={handleState} />} 
       </div>
       <p className="m-4">{text}</p>
       
@@ -77,17 +75,17 @@ const Post = ({ adsAppFunc,deleteAdsPost ,boost,ads,proImg,userName,userEmail,li
         {
           ads ?
 
-        <button onClick={()=>adsAppFunc(postId,token)} className="blue w-[50%] p-2 rounded-xl ">Approve</button>
+        <button onClick={()=>{adsAppFunc(id,token);setDelete(true)}} className="blue w-[50%] p-2 rounded-xl ">Approve</button>
         : 
-        <button onClick={()=>approveBoost(postId,uid,token)}  className="blue w-[50%] p-2 rounded-xl ">Boost</button>
+        <button onClick={()=>{approveBoost(postId,apUid,token);setDelete(true)}}  className="blue w-[50%] p-2 rounded-xl ">Boost</button>
 }
 
 
       {ads ? 
-              <button onClick={()=>deleteAdsPost(postId,token)} className="grey w-[50%] p-2 rounded-xl">Delete ad</button>
+              <button onClick={()=>{deleteAdsPost(uid,token);setDelete(true)}} className="grey w-[50%] p-2 rounded-xl">Delete ad</button>
 
       :
-      <button onClick={()=>deleteBoost(postId,token)} className="grey w-[50%] p-2 rounded-xl">Delete</button>
+      <button onClick={()=>{deleteBoost(uid,token);setDelete(true);}} className="grey w-[50%] p-2 rounded-xl">Delete</button>
 
       }
 

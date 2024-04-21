@@ -1,6 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+function logout() {
+    // Remove the token from cookies
+    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  
+    // Redirect the user to the login page or any other desired page
+    window.location.href = '/login'; // Redirect to the login page
+  }
 
 const SiderProfile = () => (
+    
     <div className="dropdown dropdown-top">
     <div role='button' tabIndex={0}  className=" flex w-[17rem] justify-between bg-[#131A23] h-16 rounded-lg px-2">
         <div className="right w-[20%] mt-2">
@@ -18,8 +28,8 @@ const SiderProfile = () => (
 
         </div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 ml-6 mb-1 shadow bg-base-100 rounded-box w-64">
-    <li><a>Profile</a></li>
-    <li><a>logout</a></li>
+    <li><NavLink to={"/adminpro"}>Profile</NavLink></li>
+    <li onClick={()=>logout}><a>logout</a></li>
   </ul>
     </div>
     </div>

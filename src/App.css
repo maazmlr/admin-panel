@@ -28,6 +28,9 @@ textarea:focus, input:focus{
 }
 
 
+
+
+
 @media only screen and (max-width: 600px) {
   *{
     font-size: 5px;
@@ -114,4 +117,111 @@ link :active{
 }
 .list{
   background-color: #121A21 !important;
+}
+
+
+
+
+
+.profile {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.post-bg-img {
+  width: 928px;
+  height: 384px;
+  object-fit: cover
+}
+
+.camera-icon1 {
+  background-color: #0E151B;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  right: 0;
+  margin-right: 300px;
+  margin-top: -90px;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.camera-icon {
+  background-color: #0E151B;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  margin-left: 160px;
+  margin-top: 40px;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.post-profile-img1 {
+  width: 168px;
+  height: 168px;
+  top: 300px;
+  margin-left: 2rem;
+  border: 4px solid #0B0E12;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 100px;
+}
+
+.edit-btn {
+  width: auto;
+  height: 48px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+  color: #FFFFFF;
+  background: #0E151B;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.edit-btn:hover{
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+
+.post-intro {
+  padding: 6.6rem 0 0 2rem;
+
+}
+
+.post-intro-name {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #E4E6EB;
+}
+
+.post-time {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #A1A1A1;
 }

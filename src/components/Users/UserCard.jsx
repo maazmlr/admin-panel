@@ -22,11 +22,10 @@ export default function MediaCard({username,proImg,email}) {
           {username}
         </Typography>
         <p className='text-white text-xs'>{email}</p>
-        <p className='text-white text-sm mt-1'>Fluuter dev</p>
         </div> 
       <div className=''>
-        <Button sx={{color:"white"}} className='card-btn blue  '>ADD</Button>
-        <Button  className='card-btn grey'> Remove</Button>
+        {/* <Button sx={{color:"white"}} className='card-btn blue  '>ADD</Button>
+        <Button  className='card-btn grey'> Remove</Button> */}
         </div>      </Box>
     </Card>
   );
